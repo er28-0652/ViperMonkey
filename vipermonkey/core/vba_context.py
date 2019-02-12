@@ -738,6 +738,32 @@ class Context(object):
         self.globals["xlXmlExportSuccess".lower()] = 0	
         self.globals["xlXmlExportValidationFailed".lower()] = 1	
 
+        # Type
+        self.globals["xlCellValue".lower()] = 1 
+        self.globals["xlExpression".lower()] = 2
+        self.globals["xlColorScale".lower()] = 3
+        self.globals["xlDatabar".lower()] = 4
+        self.globals["xlTop10".lower()] = 5
+        self.globals["xlIconSet".lower()] = 6
+        self.globals["xlUniqueValues".lower()] = 8
+        self.globals["xlTextString".lower()] = 9
+        self.globals["xlBlanksCondition".lower()] = 10
+        self.globals["xlTimePeriod".lower()] = 11
+        self.globals["xlAboveAverageCondition".lower()] = 12
+        self.globals["xlNoBlanksCondition".lower()] = 13
+        self.globals["xlErrorsCondition".lower()] = 16
+        self.globals["xlNoErrorsCondition".lower()] = 17
+
+        # Operator
+        self.globals["xlBetween".lower()] = 1
+        self.globals["xlNotBetween".lower()] = 2
+        self.globals["xlEqual".lower()] = 3
+        self.globals["xlNotEqual".lower()] = 4
+        self.globals["xlGreater".lower()] = 5
+        self.globals["xlLess".lower()] = 6
+        self.globals["xlGreaterEqual".lower()] = 7
+        self.globals["xlLessEqual".lower()] = 8 
+
     def get_true_name(self, name):
         """
         Get the true name of an aliased function imported from a DLL.
