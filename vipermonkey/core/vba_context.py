@@ -884,7 +884,7 @@ class Context(object):
         self.globals["xlCorner".lower()] = 2
         self.globals["xlCrissCross".lower()] = 16
         self.globals["xlCross".lower()] = 4
-        self.globals["可能です。".lower()] = -4114
+        self.globals["xlCustom".lower()] = -4114
         self.globals["xlDebugCodePane".lower()] = 13
         self.globals["xlDefaultAutoFormat".lower()] = -1
         self.globals["xlDesktop".lower()] = 9
