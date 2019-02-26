@@ -64,7 +64,7 @@ from . import expressions
 
 from .logger import log
 
-from .setting import COUNTRY
+from .setting import (COUNTRY, CURRENCY)
 
 # === VBA LIBRARY ============================================================
 
@@ -78,8 +78,14 @@ class Format(VbaLibraryFunc):
     """
 
     def eval(self, context, params=None):
-        r = params[0]
-        log.debug("Format(%r): return %r" % (self, r))
+        if len(params) > 1:
+            val = params[0]
+            fmt = params[1]
+            if fmt.lower() == 'currency':
+                r = '{}{:,}'.format(CURRENCY, val)
+        else:
+            r = params[0]
+        log.debug("Format(%r): return %r" % (self, params))
         return r
 
 class MsgBox(VbaLibraryFunc):
@@ -2223,8 +2229,7 @@ class International(VbaLibraryFunc):
 
     def eval(self, context, params=None):
         if params is not None:
-            if str(params[0]) == 'NULL':
-                return COUNTRY
+            return COUNTRY
 
 # add your own implemented code here
 for _class in (MsgBox, Shell, Len, Mid, MidB, Left, Right,
