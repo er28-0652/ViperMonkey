@@ -1,1 +1,2 @@
-COUNTRY = '81' # JP
+COUNTRY = 81 # JP
+CURRENCY = '\\' # JP
